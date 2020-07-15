@@ -1,4 +1,3 @@
 # text-speech-convertor
-
-#Functionalities
+# Pre-requisites:
 python 3.5 or 3.6
