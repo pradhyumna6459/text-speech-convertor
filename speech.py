@@ -1,26 +1,19 @@
 #This project take text or article and convert them into speech...
-
 #Import some libary
 
 from newspaper import Article
-import nltk
 from gtts import gTTS
-import os
+from playsound import playsound
+import time
 
-#grt the article from online
+start = time.time()
+#get the article from online
 article=Article("http://pradhyumnasinghrathore.live/")
+article.download()
 
-article.download()#article download
-article.parse()#parse the article
-nltk.download('punkt')#download the punkt package
-article.nlp() #natural learning processing
-
-#get the article text and store in variable
-
+#parse the article
+article.parse()
 mytext=article.text
-
-#print the text
-print(mytext)
 
 #selecting language for speech normally we going to select english
 language='en'
@@ -32,4 +25,5 @@ myobj=gTTS(text=mytext,lang=language,slow=False)
 myobj.save('read_article.mp3')
 
 #play that file
-os.system('start read_article.mp3')
+playsound('read_article.mp3')
+print(time.time()-start)
