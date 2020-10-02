@@ -1,12 +1,14 @@
 # text-speech-convertor
-just give a path of article it will convert into speech 
+Google assistant voice repeatation of the text or article that you have provided
+
 # Pre-requisites:
 python version 3.6 or greater
 
-
 # Installing required python dependencies
-pip install newspaper3k
+pip install -r requirements.txt
 
-pip install gTTS
+# Running app
+python app.py
 
-
+# Note
+Please manually delete the audio files if you restart the server.
